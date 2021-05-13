@@ -1,7 +1,8 @@
 #include <iostream>
 #include <cstdio>
 #include <ctime>
-#include <map>
+#include <boost/container/flat_map.hpp>
+#include <boost/container/stable_vector.hpp>
 #include <vector>
 
 
@@ -10,8 +11,8 @@ using namespace std;
 void test_function(){
     srand( (unsigned)time(NULL) );
     for(int i=0;i<100;i++) {
-        map<int, int> test_map;
-        vector<int> test_keys;
+        boost::container::flat_map<int, int> test_map;
+        boost::container::stable_vector<int> test_keys;
         // Insert random keys
         for (int i = 0; i < 100000; i++) {
             int random_key = rand() % 100000;
